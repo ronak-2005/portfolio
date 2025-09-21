@@ -675,6 +675,29 @@
   margin-bottom: 60px;
 }
 
+.resume-link {
+   background-color: #28ca42;
+}
+
+.resume-btn {
+  display: inline-block;
+  padding: 3px 60px;
+  background-color: #1f2937; /* dark button color */
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 1000;
+  font-size: xx-large;
+  transition: background-color 0.3s;
+  margin-top: 12px;
+}
+
+
+.resume-btn:hover {
+  background-color: #111827; /* darker on hover */
+}
+
 .contact-details {
   display: flex;
   flex-direction: column;
