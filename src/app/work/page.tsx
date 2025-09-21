@@ -1,5 +1,7 @@
 'use client'
 
+import Image from "next/image"
+
 export default function WorkPage() {
   const projects = [
     {
@@ -45,13 +47,14 @@ export default function WorkPage() {
       image: 'titanic.png',
       url: 'https://titanic-survival-ujpg.onrender.com',
       github: 'https://github.com/ronak-2005/Titanic_Survival'
-    },
+    }
+  
   ]
 
   return (
     <div className="work-page">
       <div className="container">
-        <h1 className="page-title">MY Projects</h1>
+        <h1 className="page-title">WORK DONE </h1>
         <p className="page-description">
           A collection of projects showcasing machine learning applications and AI-powered web solutions.
         </p>
@@ -60,7 +63,7 @@ export default function WorkPage() {
           {projects.map((project) => (
             <div key={project.id} className="work-item">
               <div className="work-preview">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover rounded-lg"
@@ -73,7 +76,7 @@ export default function WorkPage() {
                 </p>
                 <p className="work-description">{project.description}</p>
 
-                <div className=" work-button flex gap-3 mt-4">
+                <div className="button-work flex gap-3 mt-4">
                   {project.url && (
                     <a
                       href={project.url}

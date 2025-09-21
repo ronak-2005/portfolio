@@ -10,7 +10,9 @@ export default function ContactPage() {
     project: "",
     message: "",
   });
+
   const form = useRef<HTMLFormElement>(null);
+
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
@@ -39,52 +41,48 @@ export default function ContactPage() {
           setFormData({ name: "", email: "", project: "", message: "" });
         },
         (error) => {
-          console.error(error);
-          alert("❌ Failed to send message. Try again later.");
+          console.error("❌ EmailJS Error:", error);
+          alert("❌ Failed to send message. Check console for details.");
         }
       );
-    console.log("Form submitted:", formData);
   };
 
   return (
     <div className="contact-page">
       <div className="container">
-        <h1 className="page-title">Let's Work Together</h1>
+        <h1 className="page-title">Let&apos;s Work Together</h1>
 
         <div className="contact-content">
+          {/* Contact Info Section */}
           <div className="contact-info">
             <div className="contact-text">
               <p className="lead">
-                I’m always open to collaborating on exciting projects and
+                I&apos;m always open to collaborating on exciting projects and
                 learning opportunities in{" "}
                 <strong>Machine Learning, MLOps, and Web Development</strong>.
               </p>
-
               <p>
-                Whether you’re working on an ML project, need help with
+                Whether you&apos;re working on an ML project, need help with
                 deploying models, or want to collaborate on a full-stack web
-                app, I’d love to hear from you.
+                app, I&apos;d love to hear from you.
               </p>
             </div>
 
             <div className="contact-details">
               <div className="contact-item">
                 <h4>Email</h4>
-                <a href="chaturvedironak02@gmail.com">
+                <a href="mailto:chaturvedironak02@gmail.com">
                   chaturvedironak02@gmail.com
                 </a>
               </div>
-
               <div className="contact-item">
                 <h4>Phone</h4>
-                <a href="91+ 9511713215">+91 9511713215</a>
+                <a href="tel:+919511713215">+91 9511713215</a>
               </div>
-
               <div className="contact-item">
                 <h4>Location</h4>
-                <p>MUMBAI, IN</p>
+                <p>Mumbai, IN</p>
               </div>
-
               <div className="contact-item">
                 <h4>Social</h4>
                 <div className="social-links">
@@ -105,6 +103,7 @@ export default function ContactPage() {
             </div>
           </div>
 
+          {/* Contact Form Section */}
           <div className="contact-form">
             <form ref={form} onSubmit={handleSubmit}>
               <div className="form-row">
@@ -154,7 +153,7 @@ export default function ContactPage() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="message">Tell me about your project *</label>
+                <label htmlFor="message">Tell me about your project </label>
                 <textarea
                   id="message"
                   name="message"

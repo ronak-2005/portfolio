@@ -16,7 +16,7 @@ export default function Navbar() {
     <nav className="main-nav">
       <div className="nav-content">
         <Link href="/" className="logo">
-          RONAK
+          RONAK CHATURVEDI
         </Link>
         
         <div className="nav-links">

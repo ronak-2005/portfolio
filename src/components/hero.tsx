@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Hero() {
@@ -10,10 +11,9 @@ export default function Hero() {
             <h2 className="hero-subtitle">AI/ML ENGINEER & WEB DEVELOPER</h2>
 
             <p className="hero-description">
-              Creating meaningful brand experiences and digital products that
-              connect with audiences on both emotional and functional levels. I
-              believe great design happens at the intersection of strategy,
-              aesthetics, and human needs.
+              I’m a machine learning engineer who loves building smart systems
+              that solve real problems. Alongside that, I also work as a web
+              developer, turning ideas into products people can actually use.
             </p>
 
             <div className="hero-actions">
@@ -27,7 +27,13 @@ export default function Hero() {
           </div>
 
           <div className="hero-visual">
-            <img src="neuron.png" alt="AI/ML Network Pattern" />
+            <div className="design-showcase">
+              <div className="design-piece large-piece">
+                <div className="piece-content olive-green">
+                  <Image alt='neuron' src="neuron.png"></Image>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

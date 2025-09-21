@@ -5,8 +5,8 @@ import Navbar from '../components/navbar'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Ronak Chaturvedi - Visual Designer & Creative Director',
-  description: 'Portfolio of visual designer and creative director Ronak Chaturvedi',
+  title: 'Ronak CHATURVEDI - Visual Designer & Creative Director',
+  description: 'Portfolio of visual designer and creative director Ronak CHATURVEDI',
 }
 
 export default function RootLayout({
@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="pt-[30px] bg-gray-100">
+        <div className="pt-[25px] bg-gray-100">
           {/* Browser Frame */}
           <div className="browser-frame">
             <div className="browser-header">

@@ -14,10 +14,10 @@
     line-height: 1.6;
     color: #333;
     background: #e5e5e5;
-    overflow-x: hidden;
   }
 }
 
+/* Browser Frame Styles */
 .browser-frame {
   max-width: 1200px;
   margin: 40px auto;
@@ -28,14 +28,14 @@
 }
 
 .browser-header {
-  height: 3rem;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 12px 16px;
+  padding: 15px 16px;
   background: #f8f8f8;
   border-bottom: 1px solid #e0e0e0;
+  height: 50px;
 }
 
 .browser-buttons {
@@ -49,17 +49,9 @@
   border-radius: 50%;
 }
 
-.browser-button.red { 
-  background: #ff5f57; 
-}
-
-.browser-button.yellow { 
-  background: #ffbd2e; 
-}
-
-.browser-button.green { 
-  background: #28ca42; 
-}
+.browser-button.red { background: #ff5f57; }
+.browser-button.yellow { background: #ffbd2e; }
+.browser-button.green { background: #28ca42; }
 
 .browser-url {
   position:absolute;
@@ -86,7 +78,7 @@
   font-size: 14px;
 }
 
-
+/* Navigation */
 .main-nav {
   padding: 0 60px;
   background: white;
@@ -138,22 +130,22 @@
   background: #7a8b6d;
 }
 
-/* Main Content - Add bottom padding for panel */
+/* Main Content */
 .main-content {
   background: white;
-  min-height: calc(100vh - 300px);
-  }
+  min-height: calc(100vh - 300px)
+}
 
 /* Container */
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 60px;
 }
 
 /* Hero Section */
 .hero-section {
-  padding: 120px 0;
+  padding: 90px 0;
 }
 
 .hero-content {
@@ -177,7 +169,7 @@
   font-weight: 400;
   letter-spacing: 3px;
   color: #666;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .hero-description {
@@ -227,9 +219,7 @@
 
 /* Design Showcase */
 .hero-visual {
-  height: 450px;
   display: flex;
-  justify-content: center;
 }
 
 .design-showcase {
@@ -246,8 +236,8 @@
 }
 
 .large-piece {
-  width: 200px;
-  height: 280px;
+  width: 350px;
+  height: 450px;
   top: 0;
   right: 0;
   z-index: 3;
@@ -289,35 +279,138 @@
   opacity: 0.9;
 }
 
-.olive-green { 
-  background: #8b9a7a; 
-}
-
-.cream { 
-  background: #f5f1e8; 
-}
-
-.dark-green { 
-  background: #4a5c3a; 
-}
+.olive-green { background: #8b9a7a; }
+.cream { background: #f5f1e8; }
+.dark-green { background: #4a5c3a; }
 
 .geometric-shape {
   position: absolute;
 }
 
+.circle {
+  width: 80px;
+  height: 80px;
+  background: #2d3b1f;
+  border-radius: 50%;
+}
 
+.triangle.orange {
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 60px solid #d4734b;
+}
+
+.semi-circle {
+  width: 100px;
+  height: 50px;
+  background: #f5f1e8;
+  border-radius: 100px 100px 0 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Featured Projects */
+.featured-projects {
+  padding: 80px 0;
+  border-top: 1px solid #f0f0f0;
+  background: #fafafa;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.section-link {
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.section-link:hover {
+  color: #7a8b6d;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+.project-card {
+  aspect-ratio: 4/5;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+.project-preview {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #8b9a7a 0%, #7a8b6d 100%);
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.project-overlay {
+  padding: 16px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  width: 100%;
+  color: white;
+}
+
+.project-category {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.project-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 4px;
+}
 
 /* Page Styles */
 .page-title {
   font-size: 36px;
   font-weight: 700;
   letter-spacing: -1px;
-  margin-bottom: 45px;
+  margin-bottom: 60px;
 }
 
 /* Work Page */
 .work-page {
-  padding: 120px 0;
+  padding: 95px 0;
+}
+
+.button-work {
+  gap: 15px;
+  padding-top: 14px ;
 }
 
 .page-description {
@@ -326,11 +419,6 @@
   color: #666;
   max-width: 600px;
   margin-bottom: 80px;
-}
-
-.work-button {
-  gap: 18px;
-  padding-top: 15px;
 }
 
 .work-grid {
@@ -388,22 +476,52 @@
   color: #666;
 }
 
+.work-preview {
+  aspect-ratio: 4/3;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.work-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #8b9a7a 0%, #7a8b6d 100%);
+}
+
+.work-details h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.work-category {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.work-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+}
+
 /* About Page */
 .about-page {
-  padding: 120px 0;
+  padding: 95px 0;
 }
 
 .about-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 120px;
-  margin-top: 20px;
+  margin-top: 60px;
 }
 
 .about-text .lead {
   font-size: 20px;
   line-height: 1.6;
-  margin-bottom: 25px;
+  margin-bottom: 32px;
   color: #333;
   font-weight: 500;
 }
@@ -424,18 +542,18 @@
 .skills-section h3 {
   font-size: 24px;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 32px;
   color: #333;
 }
 
 .experience-list {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 8px;
 }
 
 .experience-item {
-  padding-bottom: 10px;
+  padding-bottom: 32px;
   border-bottom: 1px solid #f0f0f0;
 }
 
@@ -448,14 +566,6 @@
   font-weight: 600;
   margin-bottom: 8px;
   color: #333;
-}
-
-.hobbies-section {
- padding-top: 60px;
-}
-
-.hobbies-p {
- padding-top: 20px;
 }
 
 .company {
@@ -474,6 +584,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
+  padding-bottom: 32px;
 }
 
 .skill-category h4 {
@@ -481,6 +592,10 @@
   font-weight: 600;
   margin-bottom: 16px;
   color: #333;
+}
+
+.hobbies-section {
+  padding-top: 3px;
 }
 
 .skill-category ul {
@@ -504,40 +619,38 @@
   left: 0;
 }
 
-.about-profile {
+.about-visual {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-bottom: 18vh;
-  padding-top: 10px;
+  /* justify-content: center; */
+  /* align-items: flex-start; */
 }
-
 
 .profile-image {
   width: 100%;
-  max-width: 300px;
-  height: 300px;            
-  overflow: hidden;         
-  border-radius: 12px;
-}
-
-.profile-image img {
-  width: 100%;
   height: 100%;
-  object-fit: cover;        
-  object-position: right;   
-  border-radius: 12px;      
+  max-width: 250px;
+  max-height: 350px;
 }
 
 .profile-placeholder {
+  background: linear-gradient(135deg, #8b9a7a 0%, #7a8b6d 100%);
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.profile-img {
+  width: 100%;
+  max-width: 250px; 
+  height: 100%; 
+  object-fit: cover; 
   border-radius: 12px;
 }
 
-
-
 /* Contact Page */
 .contact-page {
-  padding: 120px 0;
+  padding: 95px 0;
 }
 
 .contact-content {
@@ -683,297 +796,6 @@
   transform: translateY(-2px);
 }
 
-/* Bottom Panel (Taskbar) */
-.bottom-panel {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid #e0e0e0;
-  padding: 12px 20px;
-  z-index: 100;
-}
-
-.panel-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.panel-pages {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-}
-
-.panel-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 16px;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  position: relative;
-  min-width: 80px;
-}
-
-.panel-page:hover {
-  background: rgba(122, 139, 109, 0.1);
-  transform: translateY(-2px);
-}
-
-.panel-page.active {
-  background: rgba(122, 139, 109, 0.15);
-}
-
-.page-preview {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.page-thumbnail {
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, #8b9a7a 0%, #7a8b6d 100%);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.page-icon {
-  font-size: 18px;
-  filter: grayscale(100%) brightness(0) invert(1);
-}
-
-.panel-page.active .page-icon {
-  filter: none;
-}
-
-.panel-page:hover .page-thumbnail {
-  transform: scale(1.1);
-}
-
-.panel-page.active .page-thumbnail {
-  background: linear-gradient(135deg, #7a8b6d 0%, #6a7b5d 100%);
-  box-shadow: 0 4px 16px rgba(122, 139, 109, 0.3);
-}
-
-.active-indicator {
-  position: absolute;
-  bottom: -16px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 6px;
-  height: 6px;
-  background: #7a8b6d;
-  border-radius: 50%;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { 
-    opacity: 1; 
-    transform: translateX(-50%) scale(1); 
-  }
-  50% { 
-    opacity: 0.7; 
-    transform: translateX(-50%) scale(1.2); 
-  }
-  100% { 
-    opacity: 1; 
-    transform: translateX(-50%) scale(1); 
-  }
-}
-
-.page-label {
-  font-size: 11px;
-  font-weight: 500;
-  color: #666;
-  text-align: center;
-  letter-spacing: 0.5px;
-}
-
-.panel-page.active .page-label {
-  color: #333;
-  font-weight: 600;
-}
-
-.panel-divider {
-  width: 1px;
-  height: 40px;
-  background: #e0e0e0;
-  margin: 0 20px;
-}
-
-.panel-actions {
-  display: flex;
-  gap: 8px;
-}
-
-.panel-action {
-  width: 28px;
-  height: 28px;
-  border: none;
-  background: transparent;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  font-size: 16px;
-  font-weight: bold;
-  color: #666;
-}
-
-.panel-action:hover {
-  background: rgba(0, 0, 0, 0.1);
-}
-
-.panel-action.close:hover {
-  background: #ff5f57;
-  color: white;
-}
-
-/* Resume Page Styles */
-.resume-page {
-  padding: 120px 0;
-}
-
-.resume-content {
-  margin-top: 60px;
-}
-
-.resume-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 60px;
-}
-
-.resume-description {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #666;
-  max-width: 500px;
-}
-
-.resume-actions {
-  display: flex;
-  gap: 16px;
-}
-
-.download-button {
-  padding: 16px 24px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  letter-spacing: 0.5px;
-  border: none;
-  cursor: pointer;
-}
-
-.download-button.primary {
-  background: #333;
-  color: white;
-}
-
-.download-button.primary:hover {
-  background: #555;
-  transform: translateY(-2px);
-}
-
-.download-button.secondary {
-  background: transparent;
-  color: #333;
-  border: 2px solid #333;
-}
-
-.download-button.secondary:hover {
-  background: #333;
-  color: white;
-  transform: translateY(-2px);
-}
-
-.resume-preview {
-  display: flex;
-  justify-content: center;
-}
-
-.resume-placeholder {
-  width: 100%;
-  max-width: 600px;
-  aspect-ratio: 8.5/11;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.resume-document {
-  padding: 60px 50px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.doc-header {
-  text-align: center;
-  border-bottom: 2px solid #f0f0f0;
-  padding-bottom: 24px;
-}
-
-.doc-header h2 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  letter-spacing: 1px;
-}
-
-.doc-header p {
-  font-size: 16px;
-  color: #666;
-  letter-spacing: 0.5px;
-}
-
-.doc-section h3 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 16px;
-  color: #333;
-  letter-spacing: 0.5px;
-}
-
-.doc-item {
-  margin-bottom: 16px;
-}
-
-.doc-item h4 {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-
-.doc-item p {
-  font-size: 14px;
-  color: #666;
-}
-
 /* Responsive Design */
 @media (max-width: 1024px) {
   .container {
@@ -1001,23 +823,13 @@
     gap: 60px;
   }
   
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
   .skills-grid {
     grid-template-columns: 1fr;
     gap: 32px;
-  }
-  
-  .panel-pages {
-    gap: 12px;
-  }
-  
-  .panel-page {
-    min-width: 70px;
-    padding: 8px 12px;
-  }
-  
-  .page-thumbnail {
-    width: 36px;
-    height: 36px;
   }
 }
 
@@ -1049,7 +861,7 @@
   .work-page,
   .about-page,
   .contact-page,
-  .resume-page {
+  .featured-projects {
     padding: 60px 0;
   }
   
@@ -1083,6 +895,11 @@
     height: 120px;
   }
   
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  
   .work-grid {
     grid-template-columns: 1fr;
   }
@@ -1108,52 +925,6 @@
     grid-template-columns: 1fr;
     gap: 0;
   }
-  
-  .resume-header {
-    flex-direction: column;
-    gap: 24px;
-  }
-  
-  .resume-actions {
-    width: 100%;
-    justify-content: flex-start;
-  }
-  
-  .bottom-panel {
-    padding: 8px 12px;
-  }
-  
-  .panel-pages {
-    gap: 8px;
-  }
-  
-  .panel-page {
-    min-width: 60px;
-    padding: 8px;
-  }
-  
-  .page-thumbnail {
-    width: 32px;
-    height: 32px;
-  }
-  
-  .page-label {
-    font-size: 10px;
-  }
-  
-  .panel-divider {
-    display: none;
-  }
-  
-  .panel-actions {
-    gap: 4px;
-  }
-  
-  .panel-action {
-    width: 24px;
-    height: 24px;
-    font-size: 14px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -1164,6 +935,10 @@
   .hero-subtitle {
     font-size: 14px;
     letter-spacing: 1px;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
   }
   
   .design-showcase {
@@ -1177,32 +952,5 @@
   
   .nav-link {
     font-size: 12px;
-  }
-  
-  .panel-pages {
-    gap: 6px;
-  }
-  
-  .panel-page {
-    min-width: 50px;
-    padding: 6px;
-  }
-  
-  .page-thumbnail {
-    width: 28px;
-    height: 28px;
-  }
-  
-  .page-label {
-    font-size: 9px;
-  }
-  
-  .bottom-panel {
-    padding: 6px 8px;
-  }
-  
-  .download-button {
-    padding: 12px 16px;
-    font-size: 13px;
   }
 }
