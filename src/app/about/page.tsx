@@ -239,6 +239,13 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
+            <div className="resume-place">
+                <div className="resume-box">
+                  <Link href="/resume-view" className="resume-btn">
+                    Resume
+                  </Link>
+                </div>
+              </div>
           </div>
 
         </div>
