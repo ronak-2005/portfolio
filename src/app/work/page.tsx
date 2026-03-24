@@ -42,7 +42,7 @@ export default function WorkPage() {
         { label: 'ZK Chain', value: 'Polygon' },
         { label: 'SDK', value: 'TS Browser' },
       ],
-      image: null,
+      image: '/humaneye.png',
       wip: true,
       url: null,
       github: null,
