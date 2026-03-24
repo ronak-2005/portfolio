@@ -11,7 +11,7 @@ export default function WorkPage() {
       id: 5,
       title: 'CXR-Detect',
       category: 'Deep Learning · Medical AI',
-      year: 'CURRENT',
+      year: '2026',
       badge: 'FEATURED',
       description:
         'A clinical-grade chest X-ray pneumonia detection system fine-tuned on ResNet-50, achieving 98.5% AUC and 96% accuracy across 624 held-out test images. The pipeline features class-balanced training via WeightedRandomSampler, mixed-precision (FP16) training, and cosine-annealing LR scheduling. Grad-CAM heatmaps provide radiologist-friendly visual explanations, while 5-pass test-time augmentation sharpens inference confidence. Label smoothing and early stopping guard against overfitting.',
