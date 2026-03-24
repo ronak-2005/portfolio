@@ -24,8 +24,8 @@ export default function WorkPage() {
       ],
       image: '/cxr-detect.png',
       wip: false,
-      url: null,
-      github: null,
+      url: 'https://cxr-detect.streamlit.app/',
+      github:'https://github.com/ronak-2005/CXR-Detect',
     },
     {
       id: 6,
@@ -43,9 +43,9 @@ export default function WorkPage() {
         { label: 'SDK', value: 'TS Browser' },
       ],
       image: '/humaneye.png',
-      wip: true,
+      wip: false,
       url: null,
-      github: null,
+      github: 'https://github.com/ronak-2005/Human-Eye',
     },
   ]
 
