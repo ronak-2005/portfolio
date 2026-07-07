@@ -4,20 +4,24 @@ import Image from "next/image";
 export default function AboutPage() {
   const skills = [
     {
-      category: "Machine Learning",
-      items: ["PyTorch", "Scikit-learn", "TensorFlow", "ONNX", "Grad-CAM", "ResNet / CNNs", "Gradient Boosting", "Label Smoothing"],
+      category: "Generative AI & LLMs",
+      items: ["Ollama (local LLM deployment)", "Hugging Face Transformers", "LoRA fine-tuning", "Prompt Engineering", "RAG & Vector Search (in progress)"],
+    },
+    {
+      category: "Machine Learning & Deep Learning",
+      items: ["PyTorch", "Scikit-learn", "TensorFlow", "ONNX", "Grad-CAM", "ResNet / CNNs", "Gradient Boosting", "Label Smoothing", "Mixed-precision training (FP16)"],
     },
     {
       category: "AI & Signal Processing",
-      items: ["rPPG (remote photoplethysmography)", "Librosa (audio forensics)", "Keystroke & mouse biometrics", "NLP text-authenticity", "Graph fraud detection", "Test-time augmentation"],
+      items: ["rPPG (remote photoplethysmography)", "Librosa (audio forensics)", "Keystroke & mouse biometrics", "NLP text-authenticity", "Graph-based fraud detection", "Test-time augmentation"],
     },
     {
       category: "Backend & Data",
-      items: ["FastAPI", "PostgreSQL", "TimescaleDB", "Neo4j", "REST APIs", "Mixed-precision training (FP16)"],
+      items: ["FastAPI", "PostgreSQL", "TimescaleDB", "Neo4j", "REST APIs", "Docker"],
     },
     {
-      category: "Web & Blockchain",
-      items: ["Next.js", "TypeScript", "Streamlit", "Circom / SnarkJS", "Polygon (ZK proofs)", "Vercel / Render"],
+      category: "Web",
+      items: ["Next.js", "TypeScript", "Streamlit", "Vercel / Render"],
     },
   ];
 
@@ -32,7 +36,7 @@ export default function AboutPage() {
       title: "HumanEye",
       tag: "Fraud Detection",
       summary:
-        "Five-domain human-verification platform: behavioral biometrics, liveness/deepfake CV, voice forensics, NLP authenticity, and graph-based financial fraud. ZK proofs on Polygon for privacy-preserving verification.",
+        "Five-domain fraud-detection platform: behavioral biometrics, liveness/deepfake CV, voice forensics, NLP text-authenticity, and graph-based financial fraud detection — served via FastAPI with models exported to ONNX and a Neo4j graph layer for catching coordinated fraud.",
     },
   ];
 
@@ -52,29 +56,36 @@ export default function AboutPage() {
 
             <div className="about-text">
               <p className="lead">
-                I'm an AI/ML engineer who builds systems that go from research
-                notebook to production deployment.
+                I'm an AI Developer who takes language models and deep learning
+                research from notebook to production.
               </p>
 
               <p>
-                My current focus is applied deep learning and security AI. I
-                recently shipped <strong>CXR-Detect</strong>, a clinical-grade
-                chest X-ray pneumonia detector achieving 98.5% AUC, and{" "}
-                <strong>HumanEye</strong>, a multi-domain fraud-detection platform
-                that combines biometric signals, voice forensics, and zero-knowledge
-                proofs to verify humanity without exposing raw user data.
+                My current focus is applied LLM engineering and deep learning.
+                As an AI Developer, I fine-tune open-source LLMs with{" "}
+                <strong>Hugging Face</strong> and <strong>LoRA</strong> and deploy
+                them locally with <strong>Ollama</strong> to automate real
+                business workflows — including a pipeline that generates
+                executive-style commentary for daily reporting, cutting
+                drafting time by roughly 85%. I'm also actively building out
+                retrieval-augmented generation and vector search to give these
+                systems long-term memory and grounded, up-to-date answers.
+              </p>
+
+              <p>
+                Alongside that, I've shipped <strong>CXR-Detect</strong>, a
+                clinical-grade chest X-ray pneumonia detector achieving 98.5%
+                AUC, and <strong>HumanEye</strong>, a multi-domain fraud-detection
+                platform that combines behavioral biometrics, deepfake detection,
+                voice forensics, and graph-based analysis to catch coordinated
+                fraud.
               </p>
 
               <p>
                 I care about the full stack — training pipelines, model
-                explainability, API design, and the UI that wraps it all together.
-                If a model can't be understood or deployed, it's not finished.
-              </p>
-
-              <p>
-                Outside of building, I'm interested in medical imaging,
-                privacy-preserving ML, and the intersection of cryptography and
-                AI identity.
+                explainability, API design, and the deployment layer that ties
+                it all together. If a model can't be understood or deployed,
+                it's not finished.
               </p>
 
               {/* Selected Work */}
@@ -165,7 +176,7 @@ export default function AboutPage() {
                 textTransform: 'uppercase',
                 margin: '0',
               }}>
-                AI / ML Engineer &amp; Web Developer
+                AI Developer &amp; ML Engineer
               </p>
             </div>
 
@@ -189,7 +200,7 @@ export default function AboutPage() {
                 flexShrink: 0,
                 display: 'inline-block',
               }} />
-              Currently building HumanEye
+              Currently learning RAG &amp; vector search
             </div>
 
             {/* Stats grid */}
@@ -208,7 +219,7 @@ export default function AboutPage() {
                 { value: '98.5%', label: 'Best AUC' },
                 { value: '5',     label: 'AI Domains' },
                 { value: '6+',    label: 'Projects' },
-                { value: 'ZK',    label: 'Proofs Built' },
+                { value: '85%',   label: 'Reporting Time Cut' },
               ].map((s) => (
                 <div key={s.label} style={{
                   display: 'flex',

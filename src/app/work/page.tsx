@@ -1,12 +1,30 @@
+
 'use client'
 
 import Image from "next/image"
 import { useState } from "react"
 
+type Metric = { label: string; value: string }
+
+type Project = {
+  id: number
+  title: string
+  category: string
+  year: string
+  description: string
+  image: string
+  stack: string[]
+  badge?: string
+  wip?: boolean
+  metrics?: Metric[]
+  url?: string | null
+  github?: string | null
+}
+
 export default function WorkPage() {
   const [showMore, setShowMore] = useState(false)
 
-  const featuredProjects = [
+  const olderProjects: Project[] = [
     {
       id: 5,
       title: 'CXR-Detect',
@@ -49,40 +67,17 @@ export default function WorkPage() {
     },
   ]
 
-  const olderProjects = [
+  const featuredProjects: Project[] = [
     {
       id: 1,
-      title: 'House Price Prediction',
-      category: 'ML Engineering',
-      year: '2025',
+      title: 'AI Developer Intern',
+      category: 'GreenPoint Global',
+      year: '2026',
       description:
-        'Built a regression model using Scikit-learn to predict house prices based on features such as location, size, and amenities. Includes data preprocessing, feature engineering, and model evaluation.',
-      image: '/house.png',
-      url: 'https://house-price-6vo8.onrender.com',
-      github: 'https://github.com/ronak-2005/house_price',
-    },
-    {
-      id: 2,
-      title: 'Loan Accept Prediction',
-      category: 'ML Engineering',
-      year: '2025',
-      description:
-        'Developed a classification model to predict whether loan applications should be approved based on applicant financial and demographic data. Focused on feature selection and accuracy optimization.',
-      image: '/loan.png',
-      url: 'https://loan-acef.onrender.com',
-      github: 'https://github.com/ronak-2005/Loan',
-    },
-    {
-      id: 3,
-      title: 'Titanic Survival Prediction',
-      category: 'ML Engineering',
-      year: '2025',
-      description:
-        'Implemented a classic machine learning project predicting passenger survival on the Titanic dataset using Scikit-learn. Applied data cleaning, exploratory data analysis, and multiple ML algorithms.',
-      image: '/titanic.png',
-      url: 'https://titanic-survival-ujpg.onrender.com',
-      github: 'https://github.com/ronak-2005/Titanic_Survival',
-    },
+        "As an AI Developer intern at GreenPoint Global, I built a local-LLM automation pipeline using Ollama to auto-generate executive-style commentary for daily business reporting — cutting manual drafting time from about an hour to under 10 minutes per report. I fine-tuned open-source models with Hugging Face and LoRA to match the required tone and style, and used prompt engineering to keep outputs consistent and production-ready. It's given me hands-on experience taking an LLM from a raw model to a reliable part of a real workflow.",
+      image: '/greenpoint.jpeg',
+      stack: ['Python', 'PyTorch', 'LLM', 'Ollama', 'HuggingFace', 'LoRAM','RAG Pipeline'],
+    }
   ]
 
   return (
@@ -94,7 +89,7 @@ export default function WorkPage() {
         </p>
 
         {/* Featured Projects */}
-        <div className="work-grid">
+        <div className="work-grid-featured">
           {featuredProjects.map((project) => (
             <div key={project.id} className="work-item work-item-featured">
               <span className="work-badge">{project.badge}</span>
@@ -106,9 +101,9 @@ export default function WorkPage() {
                     <div className="wip-triangle" />
                     <span className="wip-label">In Progress</span>
                   </div>
-                ) : (
+                  ) : (
                   <Image
-                    src={project.image!}
+                    src={project.image}
                     alt={project.title}
                     width={800}
                     height={450}
@@ -125,7 +120,7 @@ export default function WorkPage() {
                 <p className="work-description">{project.description}</p>
 
                 <div className="work-metrics">
-                  {project.metrics.map((m) => (
+                  {project.metrics?.map((m: Metric) => (
                     <div key={m.label} className="metric-pill">
                       <span className="metric-value">{m.value}</span>
                       <span className="metric-label">{m.label}</span>
@@ -155,7 +150,6 @@ export default function WorkPage() {
             </div>
           ))}
         </div>
-
         {/* View More toggle */}
         <div className="view-more-wrapper">
           <button

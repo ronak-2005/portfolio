@@ -8,13 +8,19 @@ export default function Hero() {
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title">RONAK CHATURVEDI</h1>
-            <h2 className="hero-subtitle">AI/ML ENGINEER & WEB DEVELOPER</h2>
+            <h2 className="hero-subtitle">AI/ML ENGINEER & DEVELOPER</h2>
 
             <p className="hero-description">
-              I build intelligent systems that work in the real world — from a
-              ResNet-50 chest X-ray detector with <strong>98.5% AUC</strong> to
-              a five-domain fraud-detection platform powered by ZK proofs on
-              Polygon. I close the gap between research and production.
+                 As an AI Developer, I fine-tune open-source LLMs with Hugging Face and
+              LoRA and deploy them locally with Ollama to automate real
+              business workflows — I built a pipeline that generates
+              executive-style commentary for daily reporting, cutting
+              drafting time by roughly 85%. I'm also actively building out
+              retrieval-augmented generation and vector search to extend
+              these systems with long-term memory and grounded, up-to-date
+              answers. From chest X-ray detection with <strong>98.5% AUC</strong>
+              to a five-domain fraud-detection platform, I close the gap
+              between research and production.
             </p>
 
             <div className="hero-actions">

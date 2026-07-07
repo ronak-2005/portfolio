@@ -4,7 +4,7 @@ export default function ResumeView() {
   return (
     <div style={{ textAlign: "center", margin: "50px", fontFamily: "sans-serif" }}>
       <iframe
-        src="/Ronak_ml.pdf"
+        src="/resume.pdf"
         style={{ width: "80%", height: "80vh", border: "1px solid #ccc", borderRadius: "8px" }}
       ></iframe>
       <br />

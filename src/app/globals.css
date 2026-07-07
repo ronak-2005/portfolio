@@ -423,8 +423,20 @@
 
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   gap: 80px;
+}
+
+.work-grid-featured {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px;
+}
+
+@media (max-width: 1024px) {
+  .work-grid-featured {
+    grid-template-columns: 1fr;
+  }
 }
 
 .work-item {
@@ -434,20 +446,11 @@
 }
 
 .work-preview {
-  aspect-ratio: 16/10;
-  border-radius: 12px;
+  aspect-ratio: 4/3;
+  border-radius: 8px;
   overflow: hidden;
-  position: relative;
 }
 
-.work-placeholder {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #8b9a7a 0%, #7a8b6d 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .placeholder-content {
   color: white;
@@ -480,6 +483,16 @@
   aspect-ratio: 4/3;
   border-radius: 8px;
   overflow: hidden;
+  /* keep preview height consistent so cards align */
+  max-height: 180px;
+}
+
+/* Ensure the inner img from Next/Image fills the preview area */
+.work-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .work-placeholder {

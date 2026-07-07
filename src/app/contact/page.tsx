@@ -59,12 +59,7 @@ export default function ContactPage() {
               <p className="lead">
                 I&apos;m always open to collaborating on exciting projects and
                 learning opportunities in{" "}
-                <strong>Machine Learning, MLOps, and Web Development</strong>.
-              </p>
-              <p>
-                Whether you&apos;re working on an ML project, need help with
-                deploying models, or want to collaborate on a full-stack web
-                app, I&apos;d love to hear from you.
+                <strong>AI Developer,Machine Learning, MLOps</strong>.
               </p>
             </div>
 
@@ -141,13 +136,10 @@ export default function ContactPage() {
                   onChange={handleChange}
                 >
                   <option value="">Select a project type</option>
+                  <option value="web-dev">AI Developer</option>
                   <option value="ml-model">Machine Learning Model</option>
-                  <option value="mlops">MLOps / Deployment</option>
-                  <option value="web-dev">Web Development</option>
-                  <option value="ui-ux">UI/UX Design</option>
-                  <option value="collaboration">
-                    Collaboration / Research
-                  </option>
+                  <option value="mlops">Data Science</option>
+                  
                   <option value="other">Other</option>
                 </select>
               </div>
