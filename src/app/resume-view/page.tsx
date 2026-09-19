@@ -9,7 +9,7 @@ export default function ResumeView() {
       ></iframe>
       <br />
       <a
-        href="/resume.pdf"
+        href="/ronak.pdf"
         download
         style={{
           display: "inline-block",
