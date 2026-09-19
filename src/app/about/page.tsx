@@ -5,7 +5,11 @@ export default function AboutPage() {
   const skills = [
     {
       category: "Generative AI & LLMs",
-      items: ["Ollama (local LLM deployment)", "Hugging Face Transformers", "LoRA fine-tuning", "Prompt Engineering", "RAG & Vector Search (in progress)"],
+      items: ["Ollama (local LLM deployment)", "Hugging Face Transformers", "LoRA fine-tuning", "Prompt Engineering", "Prompt Architecture", "JSON-schema-constrained generation", "Anti-hallucination guardrails"],
+    },
+    {
+      category: "Retrieval-Augmented Generation",
+      items: ["Hybrid retrieval (keyword + semantic)", "pgvector", "sentence-transformers", "Cross-encoder reranking", "Grounded citation verification"],
     },
     {
       category: "Machine Learning & Deep Learning",
@@ -17,15 +21,37 @@ export default function AboutPage() {
     },
     {
       category: "Backend & Data",
-      items: ["FastAPI", "PostgreSQL", "TimescaleDB", "Neo4j", "REST APIs", "Docker"],
+      items: ["FastAPI", "PostgreSQL", "TimescaleDB", "Neo4j", "SQL Server (mssql-python, T-SQL)", "pdfplumber / PyMuPDF", "REST APIs", "Docker / Docker Compose"],
     },
     {
       category: "Web",
-      items: ["Next.js", "TypeScript", "Streamlit", "Vercel / Render"],
+      items: ["Next.js", "React", "TypeScript", "Streamlit", "Vercel / Render"],
+    },
+    {
+      category: "Automation & Content Generation",
+      items: ["Power Automate (cloud & desktop flows)", "Power Apps", "AI Builder", "Manim (Community Edition)", "AST-based static code validation"],
     },
   ];
 
   const projects = [
+    {
+      title: "AI Financial Commentary Engine",
+      tag: "GreenPoint Global · Generative AI",
+      summary:
+        "End-to-end pipeline converting credit union board report PDFs into executive-level, LLM-generated CEO commentary across 9 report sections — live in daily production, processing ~50 PDFs in ~7 hours with zero manual drafting. Deterministic PDF extraction, multi-layer validation guardrails, and a LoRA fine-tuned Ollama model keep every section grounded and hallucination-free.",
+    },
+    {
+      title: "Local RAG Platform",
+      tag: "GreenPoint Global · RAG",
+      summary:
+        "Self-hosted Retrieval-Augmented Generation application (FastAPI, Next.js, PostgreSQL + pgvector, containerized Ollama) for querying PDFs with grounded, page-level citations. Hybrid keyword + semantic retrieval with cross-encoder reranking, delivered as a full client handoff via Docker Compose.",
+    },
+    {
+      title: "Math Education Video Pipeline",
+      tag: "GreenPoint Global · LLM-to-Code",
+      summary:
+        "Local LLM-to-code system (Python + Manim + Ollama) that converts plain-text lesson scripts into fully rendered educational videos, with a content-based routing rule that guarantees formulas render verbatim and a two-layer AST validation + fallback safety net. 10+ videos shipped, owned solo end-to-end.",
+    },
     {
       title: "CXR-Detect",
       tag: "Medical AI",
@@ -61,15 +87,19 @@ export default function AboutPage() {
               </p>
 
               <p>
-                My current focus is applied LLM engineering and deep learning.
-                As an AI Developer, I fine-tune open-source LLMs with{" "}
-                <strong>Hugging Face</strong> and <strong>LoRA</strong> and deploy
-                them locally with <strong>Ollama</strong> to automate real
-                business workflows — including a pipeline that generates
-                executive-style commentary for daily reporting, cutting
-                drafting time by roughly 85%. I'm also actively building out
-                retrieval-augmented generation and vector search to give these
-                systems long-term memory and grounded, up-to-date answers.
+                My current focus is applied LLM engineering, retrieval systems,
+                and deep learning. As an AI Developer at GreenPoint Global, I
+                fine-tune open-source LLMs with <strong>Hugging Face</strong> and{" "}
+                <strong>LoRA</strong> and deploy them locally with{" "}
+                <strong>Ollama</strong> to automate real business workflows —
+                including a pipeline that generates executive-style commentary
+                for daily reporting, cutting drafting time by roughly 85%, and
+                an LLM-to-code system that renders educational videos with
+                Manim. I've also shipped a self-hosted{" "}
+                <strong>Retrieval-Augmented Generation</strong> platform —
+                hybrid keyword and semantic search over pgvector, cross-encoder
+                reranking, and grounded, page-level citations — so answers stay
+                verifiable instead of hallucinated.
               </p>
 
               <p>
@@ -200,7 +230,7 @@ export default function AboutPage() {
                 flexShrink: 0,
                 display: 'inline-block',
               }} />
-              Currently learning RAG &amp; vector search
+              Currently exploring agentic AI workflows
             </div>
 
             {/* Stats grid */}
@@ -218,7 +248,7 @@ export default function AboutPage() {
               {[
                 { value: '98.5%', label: 'Best AUC' },
                 { value: '5',     label: 'AI Domains' },
-                { value: '6+',    label: 'Projects' },
+                { value: '8+',    label: 'Projects' },
                 { value: '85%',   label: 'Reporting Time Cut' },
               ].map((s) => (
                 <div key={s.label} style={{
