@@ -1,4 +1,3 @@
-
 'use client'
 
 import Image from "next/image"
@@ -24,12 +23,76 @@ type Project = {
 export default function WorkPage() {
   const [showMore, setShowMore] = useState(false)
 
+  // Flagship work shipped at GreenPoint Global
+  const featuredProjects: Project[] = [
+    {
+      id: 1,
+      title: 'AI Financial Commentary Engine',
+      category: 'GreenPoint Global · Generative AI',
+      year: '2026',
+      badge: 'FEATURED',
+      description:
+        "An end-to-end Python pipeline that converts credit union board report PDFs (Power BI exports) into executive-level, LLM-generated CEO commentary across 9 report sections plus a synthesized CEO Summary and Recommendations — live in daily production. A deterministic pdfplumber/PyMuPDF extraction layer replaces unreliable image-only LLM parsing with code-verified figures, backed by a multi-layer validation and guardrails system that catches segment-sum mismatches and cross-source conflicts before data ever reaches the LLM. A modular, section-specific prompt architecture and anti-hallucination safeguards (n-gram overlap detection, JSON salvage/repair) keep every commentary section grounded, with a LoRA fine-tuned Ollama model and SQL Server persistence layer feeding results back into Power BI.",
+      stack: ['Python', 'Ollama', 'LoRA', 'pdfplumber', 'PyMuPDF', 'SQL Server', 'JSON-Schema'],
+      metrics: [
+        { label: 'Report Sections', value: '9+' },
+        { label: 'PDFs / Run', value: '~50' },
+        { label: 'Turnaround', value: '~7 hrs' },
+        { label: 'Manual Drafting', value: '0' },
+      ],
+      image: '/financial-commentary-engine.png',
+      wip: false,
+      url: null,
+      github: null,
+    },
+    {
+      id: 2,
+      title: 'Automated Math Education Video Pipeline',
+      category: 'GreenPoint Global · LLM-to-Code',
+      year: '2026',
+      badge: 'FEATURED',
+      description:
+        "A local, LLM-assisted video generation pipeline (Python + Manim + Ollama) that converts plain-text lesson scripts into fully rendered educational videos with no manual scene-by-scene authoring. A content-based routing rule sends narration scenes through an LLM-generated Manim function while any scene with real formulas or calculations goes through a hand-written, deterministic template — guaranteeing math renders verbatim, never paraphrased or shrunk to fit. A two-layer safety net (AST-based static validation before caching, plus a runtime fallback to templates) lets bad LLM output degrade gracefully instead of crashing a render, and content-hashed caching skips redundant LLM calls on re-render.",
+      stack: ['Python', 'Manim', 'Ollama', 'AST Validation', 'Regex Parsing'],
+      metrics: [
+        { label: 'Render Time', value: '<10 min' },
+        { label: 'Videos Shipped', value: '10+' },
+        { label: 'Video Length', value: '~3 min' },
+        { label: 'Owned', value: 'Solo' },
+      ],
+      image: '/math-video-pipeline.png',
+      wip: false,
+      url: null,
+      github: null,
+    },
+    {
+      id: 3,
+      title: 'Local RAG Platform for PDF Document Intelligence',
+      category: 'GreenPoint Global · Retrieval-Augmented Generation',
+      year: '2026',
+      badge: 'FEATURED',
+      description:
+        "A full-stack, self-hosted Retrieval-Augmented Generation application (FastAPI backend, Next.js/React frontend, PostgreSQL + pgvector) for querying PDF documents with grounded, page-level citations — architected as a real client handoff, not a prototype. Hybrid retrieval combines keyword (full-text) and semantic (embedding) search with a cross-encoder reranking stage to filter out topically-similar-but-irrelevant results before generation. A containerized, self-hosted Ollama model handles answer generation under strict grounding rules — every cited source is independently verified against retrieved chunks — with a page-level citation viewer that renders the exact source PDF page on demand. Every external dependency sits behind a swappable provider interface, and the full 5-service stack ships via Docker Compose with a complete client handoff package.",
+      stack: ['FastAPI', 'Next.js', 'React', 'PostgreSQL', 'pgvector', 'Ollama', 'Docker Compose', 'sentence-transformers'],
+      metrics: [
+        { label: 'Services', value: '5' },
+        { label: 'Retrieval', value: 'Hybrid' },
+        { label: 'Citations', value: 'Page-level' },
+        { label: 'Deployment', value: 'Docker' },
+      ],
+      image: '/local-rag-platform.png',
+      wip: false,
+      url: null,
+      github: null,
+    },
+  ]
+
   const olderProjects: Project[] = [
     {
-      id: 5,
+      id: 4,
       title: 'CXR-Detect',
       category: 'Deep Learning · Medical AI',
-      year: '2026',
+      year: '2024',
       badge: 'FEATURED',
       description:
         'A clinical-grade chest X-ray pneumonia detection system fine-tuned on ResNet-50, achieving 98.5% AUC and 96% accuracy across 624 held-out test images. The pipeline features class-balanced training via WeightedRandomSampler, mixed-precision (FP16) training, and cosine-annealing LR scheduling. Grad-CAM heatmaps provide radiologist-friendly visual explanations, while 5-pass test-time augmentation sharpens inference confidence. Label smoothing and early stopping guard against overfitting.',
@@ -43,10 +106,10 @@ export default function WorkPage() {
       image: '/cxr-detect.png',
       wip: false,
       url: 'https://cxr-detect.streamlit.app/',
-      github:'https://github.com/ronak-2005/CXR-Detect',
+      github: 'https://github.com/ronak-2005/CXR-Detect',
     },
     {
-      id: 6,
+      id: 5,
       title: 'HumanEye',
       category: 'AI · Fraud Detection · Security',
       year: 'CURRENT',
@@ -65,19 +128,6 @@ export default function WorkPage() {
       url: null,
       github: 'https://github.com/ronak-2005/Human-Eye',
     },
-  ]
-
-  const featuredProjects: Project[] = [
-    {
-      id: 1,
-      title: 'AI Developer Intern',
-      category: 'GreenPoint Global',
-      year: '2026',
-      description:
-        "As an AI Developer intern at GreenPoint Global, I built a local-LLM automation pipeline using Ollama to auto-generate executive-style commentary for daily business reporting — cutting manual drafting time from about an hour to under 10 minutes per report. I fine-tuned open-source models with Hugging Face and LoRA to match the required tone and style, and used prompt engineering to keep outputs consistent and production-ready. It's given me hands-on experience taking an LLM from a raw model to a reliable part of a real workflow.",
-      image: '/greenpoint.jpeg',
-      stack: ['Python', 'PyTorch', 'LLM', 'Ollama', 'HuggingFace', 'LoRAM','RAG Pipeline'],
-    }
   ]
 
   return (
