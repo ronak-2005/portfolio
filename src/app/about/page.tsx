@@ -5,7 +5,7 @@ export default function AboutPage() {
   const skills = [
     {
       category: "Generative AI & LLMs",
-      items: ["Ollama (local LLM deployment)", "Hugging Face Transformers", "LoRA fine-tuning", "Prompt Engineering", "Prompt Architecture", "JSON-schema-constrained generation", "Anti-hallucination guardrails"],
+      items: ["Ollama (local LLM deployment)", "Hugging Face Transformers", "LoRA fine-tuning", "Prompt Engineering & Architecture", "JSON-schema-constrained generation", "Anti-hallucination guardrails"],
     },
     {
       category: "Retrieval-Augmented Generation",
@@ -13,19 +13,23 @@ export default function AboutPage() {
     },
     {
       category: "Machine Learning & Deep Learning",
-      items: ["PyTorch", "Scikit-learn", "TensorFlow", "ONNX", "Grad-CAM", "ResNet / CNNs", "Gradient Boosting", "Label Smoothing", "Mixed-precision training (FP16)"],
+      items: ["PyTorch", "Scikit-learn", "ONNX", "NumPy", "Pandas", "Grad-CAM", "ResNet / CNNs", "Gradient Boosting", "Mixed-precision training (FP16)", "Test-time augmentation"],
     },
     {
       category: "AI & Signal Processing",
-      items: ["rPPG (remote photoplethysmography)", "Librosa (audio forensics)", "Keystroke & mouse biometrics", "NLP text-authenticity", "Graph-based fraud detection", "Test-time augmentation"],
+      items: ["rPPG (remote photoplethysmography)", "Librosa (audio forensics)", "Keystroke & mouse biometrics", "NLP text-authenticity", "Graph-based fraud detection"],
     },
     {
-      category: "Backend & Data",
-      items: ["FastAPI", "PostgreSQL", "TimescaleDB", "Neo4j", "SQL Server (mssql-python, T-SQL)", "pdfplumber / PyMuPDF", "REST APIs", "Docker / Docker Compose"],
+      category: "Blockchain & Zero-Knowledge",
+      items: ["Circom", "SnarkJS", "Polygon"],
+    },
+    {
+      category: "Backend, Data & Deployment",
+      items: ["FastAPI", "PostgreSQL", "TimescaleDB", "Neo4j", "SQL Server (mssql-python, T-SQL)", "pdfplumber / PyMuPDF", "Docker / Docker Compose", "Git / GitHub", "REST APIs"],
     },
     {
       category: "Web",
-      items: ["Next.js", "React", "TypeScript", "Streamlit", "Vercel / Render"],
+      items: ["Next.js", "React", "TypeScript", "Streamlit"],
     },
     {
       category: "Automation & Content Generation",
