@@ -15,10 +15,10 @@ export default function Hero() {
               LoRA and deploy them locally with Ollama to automate real
               business workflows — I built a pipeline that generates
               executive-style commentary for daily reporting, cutting
-              drafting time by roughly 85%. I'm also actively building out
-              retrieval-augmented generation and vector search to extend
-              these systems with long-term memory and grounded, up-to-date
-              answers. From chest X-ray detection with <strong>98.5% AUC</strong>
+              drafting time by roughly 85%. I've also shipped a self-hosted
+              retrieval-augmented generation platform with hybrid search and
+              cross-encoder reranking, giving these systems grounded,
+              citation-verified answers. From chest X-ray detection with <strong>98.5% AUC</strong>
               to a five-domain fraud-detection platform, I close the gap
               between research and production.
             </p>
